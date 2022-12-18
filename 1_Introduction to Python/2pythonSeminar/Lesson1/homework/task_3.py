@@ -6,3 +6,17 @@
 # - x=2; y=4-> 1
 # - x=-34; y=-30 -> 3
 
+# variant 1
+x = int(input('x = '))
+y = int(input('y = '))
+if x == 0 or y == 0:
+    print('x ≠ 0 и y ≠ 0')
+else:    
+    quarter = 1
+    if x < 0 and y > 0:
+        quarter = 2
+    elif x < 0 and y < 0:
+        quarter = 3
+    elif x > 0 and y < 0:
+        quarter = 4
+    print(f'{x}; {y}; {quarter}')
