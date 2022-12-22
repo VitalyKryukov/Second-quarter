@@ -2,3 +2,13 @@
 # Пример:
 # - пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
 
+N = int(input('Введите число N: '))
+number = 1
+if N > 0:    
+    for item in range(1, N + 1):
+        number *= item
+        print(number, end = ', ')
+else:
+    for item in range(1, -N + 1):
+        number *= -item
+        print(number, end = ', ')   
