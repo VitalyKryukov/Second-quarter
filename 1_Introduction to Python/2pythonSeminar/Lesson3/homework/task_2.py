@@ -5,15 +5,29 @@
 # - [2, 3, 4, 5, 6] => [12, 15, 16];
 # - [2, 3, 5, 6] => [12, 15]
 
-def mult_lst(lst):
-    l = len(lst)//2 + 1 if len(lst) % 2 != 0 else len(lst)//2
-    new_lst = [lst[i]*lst[len(lst)-i-1] for i in range(l)]
-    print(new_lst)
+#v0
+import math
 
-lst = [2, 3, 4, 5, 6]
-mult_lst(lst)
-lst = list(map(int, input("Введите числа через пробел:\n").split()))
-mult_lst(lst)
+def product_lst (lst):
+	product_list = []
+	for i in range(int(math.ceil(len(lst)/2))):
+		product_list.append(lst[i] * lst[len(lst)-i-1])
+	return product_list
+
+number_lst = list(map(int, input('Введите числа через пробел:\n').split()))
+print(f'{number_lst} => {product_lst(number_lst)}')
+
+
+# #v1
+# def mult_lst(lst):
+#     l = len(lst)//2 + 1 if len(lst) % 2 != 0 else len(lst)//2
+#     new_lst = [lst[i]*lst[len(lst)-i-1] for i in range(l)]
+#     print(new_lst)
+
+# lst = [2, 3, 4, 5, 6]
+# mult_lst(lst)
+# lst = list(map(int, input("Введите числа через пробел:\n").split()))
+# mult_lst(lst)
 
 # # v2
 # my_list = [2, 3, 5, 6]

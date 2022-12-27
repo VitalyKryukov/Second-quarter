@@ -4,11 +4,23 @@
 # Пример:
 # - [1.1, 1.2, 3.1, 5, 10.01] => 0.19
 
-lst = list(map(float, input("Введите числа через пробел:\n").split()))
-new_lst = [round(i%1,2) for i in lst if i%1 != 0]
-print(max(new_lst) - min(new_lst))
+# v0
+def fraction_difference(lst):
+    difference_f = 0
+    new_lst = [round(i%1,2) for i in lst if i%1 != 0]
+    difference_f = max(new_lst) - min(new_lst)
+    return difference_f
+
+number_lst = list(map(float, input('Введите дробные числа через пробел:\n').split()))
+print(f'{number_lst} => {fraction_difference(number_lst)}')
+
 
 # # v1
+# lst = list(map(float, input("Введите числа через пробел:\n").split()))
+# new_lst = [round(i%1,2) for i in lst if i%1 != 0]
+# print(max(new_lst) - min(new_lst))
+
+# # v2
 # import random
 # from random import randint
 # import os
