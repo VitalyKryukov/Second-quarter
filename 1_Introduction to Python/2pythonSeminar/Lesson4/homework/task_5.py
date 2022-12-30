@@ -4,20 +4,17 @@
 import re
 import itertools
 
-
-file1 = '33_Polynomial.txt'
-file2 = '33_Polynomial2.txt'
-file_sum = '34_Sum_polynomials.txt'
+file1 = 'G:/GeekBrains/1_Учебный процесс/2 четверть/Second quarter/1_Introduction to Python/2pythonSeminar/Lesson4/homework/polynomial_1.txt'
+file2 = 'G:/GeekBrains/1_Учебный процесс/2 четверть/Second quarter/1_Introduction to Python/2pythonSeminar/Lesson4/homework/polynomial_2.txt'
+file_sum = 'G:/GeekBrains/1_Учебный процесс/2 четверть/Second quarter/1_Introduction to Python/2pythonSeminar/Lesson4/homework/sum_polynomials.txt'
 
 # Получение данных из файла
-
 def read_pol(file):
     with open(str(file), 'r') as data:
         pol = data.read()
     return pol
 
 # Получение списка кортежей каждого (<коэффициент>, <степень>)
-
 def convert_pol(pol):
     pol = pol.replace('= 0', '')
     pol = re.sub("[*|^| ]", " ", pol).split('+')
@@ -31,7 +28,6 @@ def convert_pol(pol):
     return pol
 
 # Получение списка кортежей суммы (<коэф1 + коэф2>, <степень>)
-
 def fold_pols(pol1, pol2):   
     x = [0] * (max(pol1[0][1], pol2[0][1] + 1))
     for i in pol1 + pol2:        
@@ -41,7 +37,6 @@ def fold_pols(pol1, pol2):
     return res
 
 # Составление итогового многочлена
-
 def get_sum_pol(pol):
     var = ['*x^'] * len(pol)
     coefs = [x[0] for x in pol]

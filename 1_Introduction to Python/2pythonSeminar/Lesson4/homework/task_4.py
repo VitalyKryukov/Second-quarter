@@ -7,7 +7,6 @@
 from random import randint
 import itertools
 
-k = randint(2, 7)
 
 def get_ratios(k):
     ratios = [randint(0, 10) for i in range (k + 1)]
@@ -24,22 +23,22 @@ def get_polynomial(k, ratios):
     polynomial[-1] = ' = 0'
     return "".join(map(str, polynomial)).replace(' 1*x',' x')
 
+def first_polynomial():# Первый многочлен
+    k = randint(2, 7)
+    ratios = get_ratios(k)
+    polynom1 = get_polynomial(k, ratios)
+    print(polynom1)
+    with open('G:/GeekBrains/1_Учебный процесс/2 четверть/Second quarter/1_Introduction to Python/2pythonSeminar/Lesson4/homework/polynomial_1.txt', 'w') as data:
+        data.write(polynom1)
 
-ratios = get_ratios(k)
-polynom1 = get_polynomial(k, ratios)
-print(polynom1)
 
-with open('33_Polynomial.txt', 'w') as data:
-    data.write(polynom1)
+def second_polynomial():# Второй многочлен
+    k = randint(2, 5)
+    ratios = get_ratios(k) 
+    polynom2 = get_polynomial(k, ratios)
+    print(polynom2)
+    with open('G:/GeekBrains/1_Учебный процесс/2 четверть/Second quarter/1_Introduction to Python/2pythonSeminar/Lesson4/homework/polynomial_2.txt', 'w') as data:
+        data.write(polynom2)
 
-
-# Второй многочлен для следующей задачи:
-
-k = randint(2, 5)
-
-ratios = get_ratios(k) 
-polynom2 = get_polynomial(k, ratios)
-print(polynom2)
-
-with open('33_Polynomial2.txt', 'w') as data:
-    data.write(polynom2)
+first_polynomial()
+second_polynomial()
