@@ -21,10 +21,10 @@ def take_input(playar_token):
         if str(board[value - 1]) in 'XO':
             print('Эта клетка уже занята.')
             continue
-        board[value -1] = player_token
+        board[value -1] = playar_token
         break
 
-def cheack_win ():
+def check_win ():
     for each in wins_coords:
         if (board[each[0] - 1]) == (board[each[1] - 1]) == (board[each[2] - 1]):
             return board[each[1]-1]
@@ -33,7 +33,7 @@ def cheack_win ():
 
 def main():
     counter = 0
-    while true:
+    while True:
         draw_board()
         if counter % 2 == 0:
             take_input('X')
