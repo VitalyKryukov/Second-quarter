@@ -1,0 +1,8 @@
+Записываем переменные. Вызывем функцию.
+Мы получаем переменную a = 8, оператор = "+", переменную b = 9
+Производится расчет: 8 + 9
+Записываем переменные. Вызывем функцию.
+Мы получаем переменную a = 3, оператор = "+", переменную b = 3j
+Производится расчет: 3 + 3j
+Записываем переменные. Вызывем функцию.
+Мы получаем переменную a = & C:/Users/TheWitcher/AppData/Local/Programs/Python/Python310/python.exe "g:/GeekBrains/1_Учебный процесс/2 четверть/Second quarter/1_Introduction to Python/2pythonSeminar/Lesson7/seminar/task_1_calc/main.py", оператор = "5", переменную b = & C:/Users/TheWitcher/AppData/Local/Programs/Python/Python310/python.exe "g:/GeekBrains/1_Учебный процесс/2 четверть/Second quarter/1_Introduction to Python/2pythonSeminar/Lesson7/seminar/task_1_calc/main.py"
