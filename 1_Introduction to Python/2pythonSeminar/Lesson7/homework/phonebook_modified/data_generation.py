@@ -7,10 +7,10 @@ file = open('base_phone.csv', 'w')
 newrecord = "ID,Name,Surname,PhoneNumber,email\n"
 file.writelines(newrecord)
 
-ls_name = ['Svetlana', 'Olga', 'Anton', 'Anna', 'Inna',
-           'Viktor', 'Vasilisa', 'Alex', 'Miron', 'Igor', 'Anna']
-ls_surname = ['Kovalenko', 'Sidorenko', 'Mironenko',
-              'Galich', 'Shapiro', 'Duma', 'Duma', 'Shagal', 'Moroz']
+ls_name = ['Alex', 'Vity', 'Anton', 'Phedor', 'Inna',
+           'Viktor', 'Olga', 'Svetlana', 'Boris', 'Igor', 'Anton']
+ls_surname = ['Kustov', 'Mashohina', 'Kryukov',
+              'Volobuev', 'Charlanov', 'Sokol', 'Aphanasov', 'Mironenko', 'Petrov']
 ls_e_mail = ['@gmail.com', '@yandex.ru', '@mail.ru']
 
 

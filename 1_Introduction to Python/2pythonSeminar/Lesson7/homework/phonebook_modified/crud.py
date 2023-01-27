@@ -5,7 +5,7 @@ import logger as lg
 
 db_file_name = ''
 db = []
-global_id = 0  # id для добавления пользователей
+global_id = 0
 
 
 def init_data_base(file_name='db.csv'):
@@ -58,7 +58,6 @@ def create(name='', surname='', number='', email=''):
         writer.writerow(new_row)
 
 
-# поиск (если нужно выгрузить все: result = retrive())
 def retrive(id='', name='', surname='', number='', email=''):
     global global_id
     global db
@@ -79,7 +78,6 @@ def retrive(id='', name='', surname='', number='', email=''):
     if len(result) == 0:
         return f'Контакты не найдены'
     else:
-        # выход список списков (переделать в строку с разделителем)
         return result
 
 
@@ -128,34 +126,3 @@ def delete(id=''):
                             quotechar='\'', quoting=csv.QUOTE_MINIMAL)
         for row in db:
             writer.writerow(row)
-
-
-def get_token():
-    file = open('token.csv', 'r')
-    for i in file:
-        token = i
-    file.close()
-    return token
-
-    # ====================ВНИМАНИЕ ПРИМЕР ИСПОЛЬЗОВАНИЯ НИЖЕ=======================
-    # init_data_base("test.csv") # инициализация базы
-
-    # =================Примеры создания записей=================
-    # create('vasya','pupkin','123', 'email@email.com')
-    # create('vasya','pupkin','123', 'emaasd@email.com')
-    # create('vasya','pupkin','1232432', 'emgg54l@email.com')
-    # create('vasya','pupkin','1', 'emb@email.com')
-    # create('vasya','pup','123', 'email@email.com')
-    # create('vas1','123')
-
-    # ==================Примеры поиска записей===============
-    # print(retrive()) # Выбор всего что есть
-    # print(retrive(number='123'))
-    # print(retrive(id='123'))
-    # print(retrive(id='1', number='123'))
-
-    # ==================Обновление записи==================
-    # update(id='2', new_number='09876544', new_name='petya')
-
-    # ===================Удаление записи=======================
-    # delete('1')

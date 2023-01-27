@@ -4,7 +4,7 @@ import logger as lg
 import crud
 
 
-# dg.start() # генерация базы контактов
+# dg.start()# создание базы контактов
 lg.logging.info('Start')
 crud.init_data_base('base_phone.csv')
 ui.ls_menu()
