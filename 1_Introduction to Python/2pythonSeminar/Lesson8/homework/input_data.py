@@ -2,8 +2,8 @@ from write_data import count_data
 
 def input_data():
     dct = dict()
-    Id = count_data("name.csv") 
-    dct["id"] = Id     # list[0] - это Id ученика
+    Id = count_data("G:/GeekBrains/1_Учебный процесс/2 четверть/Second quarter/1_Introduction to Python/2pythonSeminar/Lesson8/homework/name.csv") 
+    dct["id"] = Id
     dct["surname"] = input('Введите фамилию: ')
     dct["name"] = input('Введите имя: ')
     dct["class"] = input('Введите класс: ')
@@ -15,16 +15,4 @@ def input_data():
     dct["house"] = input('Введите дом: ')
     dct["apartament"] = input('Введите квартиру: ')
     dct["other"] = input('Введите примечание: ')
-    # dct["id"] = Id     # list[0] - это Id ученика
-    # dct["surname"] = "Фамилия"
-    # dct["name"] = "Имя"
-    # dct["class"] = "Класс"
-    # dct["status"] = "статус"
-    # dct["row"] = "ряд"
-    # dct["col"] = "номер парты"
-    # dct["city"] = "город"
-    # dct["street"] = "улица"
-    # dct["house"] = "дом"
-    # dct["apartament"] = "квартира"
-    # dct["other"] = "примечание"
     return dct

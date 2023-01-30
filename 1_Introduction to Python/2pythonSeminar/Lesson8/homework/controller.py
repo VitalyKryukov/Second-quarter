@@ -2,6 +2,7 @@ from push_data import *
 from read_data import *
 from print_data import *
 from search_data import *
+from edit_data import *
 
 
 def greeting():
@@ -12,7 +13,9 @@ def start():
     1 - получить всю информацию о учениках;\n\
     2 - добавить ученика;\n\
     3 - поиск ученика;\n\
-    4 - выход.")
+    4 - редактировать данные ученика;\n\
+    5 - удалить ученика;\n\
+    6 - выход.")
     ch = input("Введите цифру: ")
     while True:
         if ch == '1':
@@ -31,8 +34,12 @@ def start():
             else:
                 print("Данные не обнаружены")                
             start()
-        elif ch == '4':
-            print("Сеанс окончен, до свидания!")
+        # elif ch == '4':
+        #     # тут добавить возможность редактиования
+        # elif ch == '5':
+        #     # тут добавить возможность удаления
+        elif ch == '6':
+            print("Сеанс окончен, хорошего дня!")
             break
         else:
             print("Введите корректную цифру!")
