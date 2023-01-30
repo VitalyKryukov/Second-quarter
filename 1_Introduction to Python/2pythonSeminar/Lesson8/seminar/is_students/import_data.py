@@ -13,11 +13,11 @@ def create_student():
     global all_classes
     if class_name not in all_classes:
         create_cl(class_name)
+    global id_student
     all_classes[class_name].append(id_student)
     st_data = [surname, name, otch, birth, tel, adress, class_name]
     global all_students
     all_students[id_student] = st_data
-    global id_student
     id_student += 1
 
 def create_cl(name_class=False):
@@ -26,7 +26,7 @@ def create_cl(name_class=False):
     all_classes[name_class] = []
 
 def edit_student():
-    student_id = int(input("Введите id ученика: "))
+    student_id = input("Введите id ученика: ")
     surname = input("Введите фамилию ученика: ")
     name = input("Введите имя ученика: ")
     otch = input("Введите отчество ученика: ")

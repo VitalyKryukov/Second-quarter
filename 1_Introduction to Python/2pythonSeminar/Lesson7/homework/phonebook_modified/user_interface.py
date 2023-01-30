@@ -6,7 +6,7 @@ print('\nВас приветствует телефонная книга')
 
 
 def ls_menu():
-    while True:
+    while True:      
         print('\nМЕНЮ')
         print('1. Показать все записи.')
         print('2. Найти номер по фамилии.')
@@ -16,7 +16,7 @@ def ls_menu():
         print('6. Изменить существующую запись.')
         print('7. Удалить запись.')
         print('8. Закрыть программу.\n')
-        n = сhecking_the_number(input('Выберите пункт меню: '))
+        n = сhecking_the_number(input('Введите цифру действия: '))
 
         if n == 1:
             lg.logging.info('The user has selected item number 1')
