@@ -3,7 +3,7 @@ import csv
 import logger as lg
 
 
-file = open('G:/GeekBrains/1_Учебный процесс/2 четверть/Second quarter/1_Introduction to Python/2pythonSeminar/Lesson9/homework/phonebook_tg_bot/base_phone.csv', 'w')
+file = open('./base_phone.csv', 'w')
 newrecord = "ID,Name,Surname,PhoneNumber,email/n"
 file.writelines(newrecord)
 
