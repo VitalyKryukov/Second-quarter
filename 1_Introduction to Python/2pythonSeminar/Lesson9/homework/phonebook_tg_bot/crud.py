@@ -8,7 +8,7 @@ db = []
 global_id = 0
 
 
-def init_data_base(file_name='G:/GeekBrains/1_Учебный процесс/2 четверть/Second quarter/1_Introduction to Python/2pythonSeminar/Lesson9/homework/phonebook_tg_bot/db.csv'):
+def init_data_base(file_name='./db.csv'):
     global global_id
     global db
     global db_file_name
@@ -128,7 +128,7 @@ def delete(id=''):
             writer.writerow(row)
 
 def get_token():
-    file = open('G:/GeekBrains/1_Учебный процесс/2 четверть/Second quarter/1_Introduction to Python/2pythonSeminar/Lesson9/homework/phonebook_tg_bot/token.csv', 'r')
+    file = open('./token.csv', 'r')
     for i in file:
         token = i
     file.close()

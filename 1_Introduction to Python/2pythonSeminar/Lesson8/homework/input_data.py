@@ -1,8 +1,12 @@
-from write_data import count_data
+import codecs
+from read_data import count_data
 
 def input_data():
+    Id = count_data("./name.csv") 
+    return input_data_with_id(Id)
+    
+def input_data_with_id(Id):
     dct = dict()
-    Id = count_data("G:/GeekBrains/1_Учебный процесс/2 четверть/Second quarter/1_Introduction to Python/2pythonSeminar/Lesson8/homework/name.csv") 
     dct["id"] = Id
     dct["surname"] = input('Введите фамилию: ')
     dct["name"] = input('Введите имя: ')

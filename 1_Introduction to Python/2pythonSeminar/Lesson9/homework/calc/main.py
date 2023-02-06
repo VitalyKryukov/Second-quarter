@@ -4,7 +4,15 @@ from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters, Conv
 
 # Логирование
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+# Логирование (сохранение в файл)
+# logging.basicConfig(
+#     level=logging.INFO,
+#     filename='./calc_log.log',
+#     format='[%(asctime)s] [%(levelname)s] [%(module)s] [%(funcName)s: %(lineno)d] => %(message)s',
+#     datefmt='%d.%m.%Y %H:%M:%S ',
+# )
 logger = logging.getLogger(__name__)
+
 
 CHOICE, RATIONAL_ONE, RATIONAL_TWO, OPERATIONS_RATIONAL, OPERATIONS_COMPLEX, COMPLEX_ONE, COMPLEX_TWO = range(7)
 
@@ -74,7 +82,7 @@ def operatons_rational(update, context):
                 result = rational_one / rational_two
             except:
                 update.message.reply_text('Деление на ноль запрещено')
-        update.message.reply_text(f'Результат: {rational_one} + {rational_two} = {result}')
+        update.message.reply_text(f'Результат: {rational_one} {user_choice} {rational_two} = {result}')
         return ConversationHandler.END
     else:
         update.message.reply_text('Ошибка ввода. Выберите действие: \n+ - для сложения; \n- - для вычетания; \n* - для умножения; \n/ - для деления. \n' )
@@ -130,7 +138,7 @@ def operatons_complex(update, context):
                 result = complex_one / complex_two
             except:
                 update.message.reply_text('Деление на ноль запрещено')
-        update.message.reply_text(f'Результат: {complex_one} + {complex_two} = {result}')
+        update.message.reply_text(f'Результат: {complex_one} {user_choice} {complex_two} = {result}')
         return ConversationHandler.END
     else:
         update.message.reply_text('Ошибка ввода. \n+ - для сложения; \n- - для вычетания; \n* - для умножения; \n/ - для деления. \n')

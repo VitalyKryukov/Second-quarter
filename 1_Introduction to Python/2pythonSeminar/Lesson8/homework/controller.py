@@ -3,6 +3,7 @@ from read_data import *
 from print_data import *
 from search_data import *
 from edit_data import *
+from del_data import *
 
 
 def greeting():
@@ -23,7 +24,7 @@ def start():
             print_data(data)
             start()
         elif ch == '2':
-            push_data()
+            push_data(input_data())
             start()
         elif ch == '3':
             info = input("Введите данные для поиска: ")
@@ -34,10 +35,14 @@ def start():
             else:
                 print("Данные не обнаружены")                
             start()
-        # elif ch == '4':
-        #     # тут добавить возможность редактиования
-        # elif ch == '5':
-        #     # тут добавить возможность удаления
+        elif ch == '4':
+            data = read_data()
+            edit_data(data)
+            start()
+        elif ch == '5':
+            data = read_data()
+            del_data(data)
+            start()
         elif ch == '6':
             print("Сеанс окончен, хорошего дня!")
             break
