@@ -1,6 +1,5 @@
 package org.example.seminar6.hw1.model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
