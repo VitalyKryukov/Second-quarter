@@ -1,3 +1,5 @@
+package org.example.seminar1.hw1;
+
 import java.math.BigDecimal;
 
 /**
@@ -16,8 +18,8 @@ public abstract class Product {
     /**
      * Конструктор с двумя аргументами
      *
-     * @param name  Наименование продукта
-     * @param price Цена продукта
+     * @name  Наименование продукта
+     * @price Цена продукта
      */
     public Product(String name, BigDecimal price) {
         this.name = name;
@@ -26,7 +28,6 @@ public abstract class Product {
 
     /**
      * Получение наименования продукта
-     *
      * @return наименование продукта
      */
     public String getName() {
@@ -35,7 +36,6 @@ public abstract class Product {
 
     /**
      * Задание наименования продукта
-     *
      * @param name наименование продукта
      */
     public void setName(String name) {
@@ -44,7 +44,6 @@ public abstract class Product {
 
     /**
      * Получение цены продукта
-     *
      * @return цена продукта
      */
     public BigDecimal getPrice() {
@@ -52,9 +51,8 @@ public abstract class Product {
     }
 
     /**
-     * Задание цены продукта с проверкой на корректность цены
-     *
-     * @param price цена продукта
+     * Задание цены продукта, проверка на корректность цены
+     * @price цена продукта
      */
     public void setPrice(BigDecimal price) {
         if (price.compareTo(BigDecimal.valueOf(0)) > 0) this.price = price;
@@ -63,7 +61,6 @@ public abstract class Product {
 
     /**
      * Получение содержимого экземпляра объекта в читаемом виде
-     *
      * @return наименование продукта и его стоимость;
      */
     @Override

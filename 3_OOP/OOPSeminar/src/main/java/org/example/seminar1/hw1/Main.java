@@ -1,3 +1,5 @@
+package org.example.seminar1.hw1;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,8 +24,8 @@ public class Main {
                 new HotDrinks("Milk", new BigDecimal(300), 1.0, 65)));
         vmHotDrinks.initProduct(hotDrinksList);
         System.out.println("Поиск по названию: " + vmHotDrinks.getProduct("Tea"));
-        System.out.println("Поиск по цене <=: " + vmHotDrinks.getProduct(new BigDecimal(250)));
-        System.out.println("Поиск по температуре <=: " + vmHotDrinks.getProduct(72));
+        System.out.println("Поиск по цене <=: " + vmHotDrinks.getProduct(new BigDecimal(300)));
+        System.out.println("Поиск по температуре <=: " + vmHotDrinks.getProduct(70));
     }
 
     /**

@@ -1,3 +1,5 @@
+package org.example.seminar1.hw1;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,8 +20,7 @@ public class VendingMachineHotDrinks implements VendingMachine {
 
     /**
      * Перегруженный метод
-     *
-     * @param list лист объектов класса hotDrinks
+     * @list лист объектов класса hotDrinks
      */
     public void initProduct(List<HotDrinks> list) {
         this.hotDrinksList = list;
@@ -27,7 +28,6 @@ public class VendingMachineHotDrinks implements VendingMachine {
 
     /**
      * Переопределенный метод
-     *
      * @return null
      */
     @Override
@@ -37,7 +37,6 @@ public class VendingMachineHotDrinks implements VendingMachine {
 
     /**
      * Перегруженный метод получения горячего напитка по названию
-     *
      * @return Список найденных экземпляров класса HotDrinks
      */
     public String getProduct(String name) {
@@ -50,7 +49,6 @@ public class VendingMachineHotDrinks implements VendingMachine {
 
     /**
      * Перегруженный метод получения горячего напитка по цене (меньшей или равной)
-     *
      * @return Список найденных экземпляров класса HotDrinks
      */
     public String getProduct(BigDecimal price) {
@@ -63,7 +61,6 @@ public class VendingMachineHotDrinks implements VendingMachine {
 
     /**
      * Перегруженный метод получения горячего напитка по цене (меньшей или равной)
-     *
      * @return Список найденных экземпляров класса HotDrinks
      */
     public String getProduct(int temp) {

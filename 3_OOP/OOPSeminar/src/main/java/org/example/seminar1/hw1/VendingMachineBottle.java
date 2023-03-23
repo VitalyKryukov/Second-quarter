@@ -1,3 +1,5 @@
+package org.example.seminar1.hw1;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +19,7 @@ public class VendingMachineBottle implements VendingMachine {
     /**
      * Перегруженный метод внесения бутилированной воды
      *
-     * @param bottle Лист экземпляров класса бутилированной воды
+     * @bottle Лист экземпляров класса бутилированной воды
      */
     public void initProduct(List<BottleOfWater> bottle) {
         this.bottleOfWaterList = bottle;
@@ -25,7 +27,6 @@ public class VendingMachineBottle implements VendingMachine {
 
     /**
      * Переопределенный метод получения продуктов из автомата
-     *
      * @return null
      */
     @Override
@@ -35,8 +36,7 @@ public class VendingMachineBottle implements VendingMachine {
 
     /**
      * Перегруженный метод получения бутилированной воды
-     *
-     * @param name наименование нужной воды
+     * @name наименование нужной воды
      * @return в строковом виде содержимое экземпляра класса BottleOfWater, или не найдено.
      */
     public String getProduct(String name) {

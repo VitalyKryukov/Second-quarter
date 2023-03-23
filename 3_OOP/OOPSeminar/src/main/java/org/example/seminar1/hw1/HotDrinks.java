@@ -1,3 +1,5 @@
+package org.example.seminar1.hw1;
+
 import java.math.BigDecimal;
 
 /**
@@ -8,11 +10,10 @@ public class HotDrinks extends Drinkables {
 
     /**
      * Перегруженный конструктор класса горячих напитков
-     *
-     * @param name   Наименование напитка
-     * @param price  Цена напитка
-     * @param volume Объем напитка
-     * @param temp   Температура напитка
+     * @name   Наименование напитка
+     * @price  Цена напитка
+     * @volume Объем напитка
+     * @temp   Температура напитка
      */
     public HotDrinks(String name, BigDecimal price, Double volume, int temp) {
         super(name, price, volume);
@@ -21,7 +22,6 @@ public class HotDrinks extends Drinkables {
 
     /**
      * Получение температуры напитка
-     *
      * @return температуру напитка
      */
     public int getTemp() {
@@ -30,7 +30,6 @@ public class HotDrinks extends Drinkables {
 
     /**
      * Переопределенный метод
-     *
      * @return наименование продукта, стоимость, объем и температуру.
      */
     @Override

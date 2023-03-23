@@ -1,3 +1,5 @@
+package org.example.seminar1.hw1;
+
 import java.math.BigDecimal;
 
 /**
@@ -8,10 +10,9 @@ public class Drinkables extends Product {
 
     /**
      * Переопределенный конструктор напитков
-     *
-     * @param name   наименование напитка
-     * @param price  цена напитка
-     * @param volume объем напитка
+     * @name   наименование напитка
+     * @price  цена напитка
+     * @volume объем напитка
      */
     public Drinkables(String name, BigDecimal price, Double volume) {
         super(name, price);
@@ -20,7 +21,6 @@ public class Drinkables extends Product {
 
     /**
      * Получение объема напитка
-     *
      * @return объем напитка
      */
     public Double getVolume() {
@@ -29,7 +29,6 @@ public class Drinkables extends Product {
 
     /**
      * Переопределенный метод
-     *
      * @return наименование продукта, его стоимость и объем;
      */
     @Override
@@ -40,7 +39,7 @@ public class Drinkables extends Product {
     /**
      * Задание объема напитка с проверкой на некорректное значение
      *
-     * @param volume объем напитка
+     * @volume объем напитка
      */
     public void setVolume(Double volume) {
         if (volume > 0) this.volume = volume;

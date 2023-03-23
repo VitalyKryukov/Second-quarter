@@ -1,3 +1,5 @@
+package org.example.seminar1.hw1;
+
 /**
  * Интерфейс торгового автомата
  */
@@ -9,7 +11,6 @@ public interface VendingMachine {
 
     /**
      * Получение продукта из торгового автомата
-     *
      * @return строку
      */
     String getProduct();
