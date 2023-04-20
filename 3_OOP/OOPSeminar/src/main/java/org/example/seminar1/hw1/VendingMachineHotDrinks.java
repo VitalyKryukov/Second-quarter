@@ -60,7 +60,7 @@ public class VendingMachineHotDrinks implements VendingMachine {
     }
 
     /**
-     * Перегруженный метод получения горячего напитка по цене (меньшей или равной)
+     * Перегруженный метод получения горячего напитка по температуре (меньшей или равной)
      * @return Список найденных экземпляров класса HotDrinks
      */
     public String getProduct(int temp) {

@@ -21,15 +21,15 @@ public class Main {
         List<HotDrinks> hotDrinksList = new ArrayList<>(Arrays.asList(
                 new HotDrinks("Coffee", new BigDecimal(200), 0.3, 80),
                 new HotDrinks("Tea", new BigDecimal(100), 0.4, 70),
-                new HotDrinks("Milk", new BigDecimal(300), 1.0, 65)));
+                new HotDrinks("Milk", new BigDecimal(300), 1.0, 75)));
         vmHotDrinks.initProduct(hotDrinksList);
         System.out.println("Поиск по названию: " + vmHotDrinks.getProduct("Tea"));
-        System.out.println("Поиск по цене <=: " + vmHotDrinks.getProduct(new BigDecimal(300)));
+        System.out.println("Поиск по цене <=: " + vmHotDrinks.getProduct(new BigDecimal(100)));
         System.out.println("Поиск по температуре <=: " + vmHotDrinks.getProduct(70));
     }
 
     /**
-     * Перечисления для названий продуктов (сделал просто так, для понимания)
+     * Перечисления для названий продуктов
      */
     enum prod {
         Cola,
