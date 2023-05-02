@@ -1,6 +1,8 @@
 {
     "java.project.sourcePaths": [
+        "3_OOP/OOPLecture/Seminar1/VendingMachine/src",
+        "3_OOP/OOPLecture/Lesson1/Ex001",
         "2_Java/1JavaLecture/Lesson1/java_projects",
-        "3_OOP/OOPLecture/Lesson1/Ex001"
+        "3_OOP/OOPLecture/Seminars/SuperMarket/src"
     ]
 }
