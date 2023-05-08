@@ -1,6 +1,14 @@
 package Classes;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class PromotionalClient extends Actor {
+    /**
+     * @param promotionalClients клиенты акции;
+     */
+    private static Map<String, Integer> promotionalClients = new HashMap<>();
+
     /**
      * @param shareName название акции;
      */
@@ -9,16 +17,21 @@ public class PromotionalClient extends Actor {
      * @param numPromotionalClient номер акционного клиента;
      */
     private int numPromotionalClient;
+
     /**
      * Конструктор для класса акционного клиента
      * @param name - имя клиента
      * @param shareName - название акции
-     * @param numPromotionalClient - номер клиента в акции
      */
-    public PromotionalClient(String name, String shareName, int numPromotionalClient) {
+    public PromotionalClient(String name, String shareName) {
         super(name);
         this.shareName = shareName;
-        this.numPromotionalClient = numPromotionalClient;
+        if(promotionalClients.containsKey(shareName)) {
+            numPromotionalClient = promotionalClients.get(shareName) + 1;
+        } else {
+            numPromotionalClient = 0;
+        }
+        promotionalClients.put(shareName, numPromotionalClient);
     }
     /**
      * Получить название акции
@@ -34,48 +47,13 @@ public class PromotionalClient extends Actor {
     public int getNumPromotionalClient() {
         return numPromotionalClient;
     }
-    /**
-     * Получить имя клиента
-     */
-    @Override
-    public String getName() {
-        return super.name;
-    }
 
-    @Override
-    public Actor getActor() {
-        return this;
-    }
-
-    @Override
-    public boolean isMakeOrder() {
-        return super.isMakeOrder;
-    }
-
-    @Override
-    public boolean isTakeOrder() {
-        return super.isTakeOrder;
-    }
-
-    @Override
-    public void setMakeOrder(boolean makeOrder) {
-        super.isMakeOrder = makeOrder;
-    }
-
-    @Override
-    public void setTakeOrder(boolean pickUpOrder) {
-        super.isTakeOrder = pickUpOrder;
-    }
-
-    
-    @Override
-    public boolean isReturnOrder() {
-        return super.isReturnOrder;
-    }
-    
-    @Override
-    public boolean isGetMony() {
-        return super.isGetMony;
+    public int getCountPromotionalClient(){
+        if(promotionalClients.containsKey(shareName)) {
+            return promotionalClients.get(shareName);
+        } else {
+            return 0;
+        }
     }
 
 }

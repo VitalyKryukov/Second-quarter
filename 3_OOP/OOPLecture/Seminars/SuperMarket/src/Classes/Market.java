@@ -1,37 +1,64 @@
 package Classes;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
-import Interfases.iActorBehaviour;
-import Interfases.iMarketBehaviour;
-import Interfases.iQueueBehaviour;
-import Interfases.iReturnOrder;
+import Interfases.*;
 
-public class Market implements iMarketBehaviour,iQueueBehaviour,iReturnOrder {
-    
+public class Market implements iMarketBehaviour,iQueueBehaviour {
+    /**
+     * @param logger - объект для сохранения логов работы
+     */
+    private Logger logger = Logger.getLogger("MyLog");
+
     /**
      * Создаем лист клиентов из класса родителя
      * @param queue - очередь клиентов
      */
     // private List<Actor> queue;
     
-    private List<iActorBehaviour> queue;
+    private List<iActor> queue;
+
+    /**
+     *  @param promotionalLimits - предел участников акции
+     */
+    private Map<String, Integer> promotionalLimits = new HashMap<>();
 
     /**
      * Конструктор для класса Market 
-     * @param queue - создаем очередь клиентов (выделяем память под нее)
      */
     public Market() {
-        this.queue = new ArrayList<iActorBehaviour>();
-    }   
-    /** 
+        this.queue = new ArrayList<iActor>();
+        FileHandler fh;
+        try {
+            fh = new FileHandler("./market.log");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        logger.addHandler(fh);
+        SimpleFormatter formatter = new SimpleFormatter();
+        fh.setFormatter(formatter);
+    }
+
+    @Override
+    public void setPromotionalLimit(String shareName, int limit) {
+        promotionalLimits.put(shareName, limit);
+    }
+
+    /**
      * Имплементированный метод с реализацией: "Добавление клиента в очередь магазина"
      * @param actor - клиент
      */
     @Override
-    public void acceptToMarket(iActorBehaviour actor) {
-        System.out.println(actor.getActor().getName()+" клиент пришел в магазин ");
+    public void acceptToMarket(iActor actor) {
+        logger.log(Level.INFO, actor.getName()+" клиент пришел в магазин ");
         takeInQueue(actor);
     }  
     /**
@@ -39,8 +66,8 @@ public class Market implements iMarketBehaviour,iQueueBehaviour,iReturnOrder {
      * @param actor
      */
     @Override
-    public void takeInQueue(iActorBehaviour actor) {
-        System.out.println(actor.getActor().getName()+" клиент добавлен в очередь ");
+    public void takeInQueue(iActor actor) {
+        logger.log(Level.INFO,actor.getName()+" клиент добавлен в очередь ");
         this.queue.add(actor);
     }  
     /**
@@ -48,9 +75,9 @@ public class Market implements iMarketBehaviour,iQueueBehaviour,iReturnOrder {
      * @param actors клиент
      */
     @Override
-    public void releaseFromMarket(List<Actor> actors) {
-        for (Actor actor : actors) {
-            System.out.println(actor.getName()+" клиент ушел из магазина ");
+    public void releaseFromMarket(List<iActor> actors) {
+        for (iActor actor : actors) {
+            logger.log(Level.INFO,actor.getName()+" клиент ушел из магазина ");
             queue.remove(actor);
         }
         
@@ -69,11 +96,11 @@ public class Market implements iMarketBehaviour,iQueueBehaviour,iReturnOrder {
      */
     @Override
     public void releaseFromQueue() {
-        List<Actor> releaseActors = new ArrayList<>();
-        for (iActorBehaviour actor: queue) {
+        List<iActor> releaseActors = new ArrayList<>();
+        for (iActor actor: queue) {
             if (actor.isTakeOrder()){
-                releaseActors.add(actor.getActor());
-                System.out.println(actor.getActor().getName()+" клиент ушел из очереди ");
+                releaseActors.add(actor);
+                logger.log(Level.INFO,actor.getName()+" клиент ушел из очереди ");
             }
         }
     releaseFromMarket(releaseActors);
@@ -81,44 +108,47 @@ public class Market implements iMarketBehaviour,iQueueBehaviour,iReturnOrder {
     /**
      * Статус клиента: получение заказа
      */
-    @Override
     public void giveOrder() {
-        for (iActorBehaviour actor : queue) {
+        for (iActor actor : queue) {
            if(actor.isMakeOrder()){
                 actor.setTakeOrder(true);
-                System.out.println(actor.getActor().getName()+" клиент получил заказ ");
+               logger.log(Level.INFO,actor.getName()+" клиент получил заказ ");
            } 
         }
     } 
     /**
      * Статус клиента: заказ товара
      */
-    @Override
     public void takeOrder() {
-        for ( iActorBehaviour actor : queue) {
+        for ( iActor actor : queue) {
+            if(actor instanceof PromotionalClient){
+                PromotionalClient client = (PromotionalClient) actor;
+                if(client.getNumPromotionalClient() >= client.getCountPromotionalClient()){
+                    logger.log(Level.INFO,"Клиенту " + actor.getName()+" отказано в ослуживании из-за превышения участников акции");
+                    continue;
+                }
+            }
             if(!actor.isMakeOrder()){
                 actor.setMakeOrder(true);
-                System.out.println(actor.getActor().getName()+" клиент сделал заказ ");
+                logger.log(Level.INFO,actor.getName()+" клиент сделал заказ ");
             }
         }
     }
-    
-    @Override
+
     public void returnOrder() {
-        for ( iActorBehaviour actor : queue){
-            if(!actor.isMakeOrder()){
-                actor.setMakeOrder(true);
-                System.out.println(actor.getActor().getName()+" товар принят к возврату ");
+        for ( iActor actor : queue){
+            if(actor.isTakeOrder()){
+                actor.returnOrder();
+                logger.log(Level.INFO,actor.getName()+" товар принят к возврату ");
             }
         }
     }
-    
-    @Override
+
     public void getMoney() {
-        for ( iActorBehaviour actor : queue){
-            if(!actor.isMakeOrder()){
-                actor.setMakeOrder(true);
-                System.out.println(actor.getActor().getName()+" клиент получил деньги за возврат товара ");
+        for ( iActor actor : queue){
+            if(actor.isReturnOrder()){
+                actor.getMoney();
+                logger.log(Level.INFO,actor.getName()+" клиент получил деньги за возврат товара ");
             }
     }
     }

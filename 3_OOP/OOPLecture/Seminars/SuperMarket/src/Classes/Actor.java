@@ -1,8 +1,8 @@
 package Classes;
 
-import Interfases.iActorBehaviour;
+import Interfases.iActor;
 
-public abstract class Actor implements iActorBehaviour {
+public class Actor implements iActor {
     /**
      * @param name - имя клиента
      */
@@ -10,19 +10,19 @@ public abstract class Actor implements iActorBehaviour {
     /**
      * @param isTakeOrder - получил заказ
      */
-    protected boolean isTakeOrder;
+    protected boolean isTakeOrder = false;
     /**
      * @param isMakeOrder - сделал заказ
      */
-    protected boolean isMakeOrder;
+    protected boolean isMakeOrder = false;
     /**
      * @param isReturnOrde - вернул товар
      */
-    public boolean isReturnOrder;
+    public boolean isReturnOrder = false;
     /**
      * @param isGetMony - получил деньги за возврат
      */
-    public boolean isGetMony;
+    public boolean isGetMoney = false;
 
     /**
      * Конструктор
@@ -31,10 +31,66 @@ public abstract class Actor implements iActorBehaviour {
     public Actor(String name) {
         this.name = name;
     }
+
     /**
-     * Абстрактный метод получения имени клиента
+     * Статус клиента: делал ли он заказ
+     * @return
+     */
+    @Override
+    public boolean isMakeOrder() {
+        return isMakeOrder;
+    }
+    /**
+     * Статус клиента: получил ли он заказ
+     * @return
+     */
+    @Override
+    public boolean isTakeOrder() {
+        return isTakeOrder;
+    }
+    /**
+     * Статус клиента: делал ли он заказ
+     * @param makeOrder
+     */
+    @Override
+    public void setMakeOrder(boolean makeOrder) {
+        isMakeOrder = makeOrder;
+
+    }
+    /**
+     * Статус клиента: забрал ли он заказ
+     * @param pickUpOrder
+     */
+    @Override
+    public void setTakeOrder(boolean pickUpOrder) {
+        isTakeOrder = pickUpOrder;
+    }
+
+    @Override
+    public boolean isReturnOrder() {
+        return isReturnOrder;
+    }
+
+    @Override
+    public boolean isGetMoney() {
+        return isGetMoney;
+    }
+
+    /**
+     * Метод получения имени клиента
      * @return - имя клиента
      */
-    public abstract String getName();
+    public String getName(){
+        return name;
+    }
 
+    @Override
+    public void returnOrder() {
+        isReturnOrder = true;
+    }
+
+    @Override
+    public void getMoney() {
+        isGetMoney = true;
+    }
 }

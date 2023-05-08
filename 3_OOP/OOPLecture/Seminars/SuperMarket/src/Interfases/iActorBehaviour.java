@@ -1,7 +1,5 @@
 package Interfases;
 
-import Classes.Actor;
-
 public interface iActorBehaviour {
     /**
      * Клиент сделал заказ
@@ -23,19 +21,5 @@ public interface iActorBehaviour {
      * @return
      */
     boolean isTakeOrder();
-    /**
-     * Статус клиента: вернул ли он заказ
-     * @return
-     */
-    boolean isReturnOrder();
-    /**
-     * Статус клиента: получил ли он деньги за возврат
-     * @return
-     */
-    boolean isGetMony();
-    /**
-     * Вернуть имя клиента
-     * @return имя клиента
-     */
-    Actor getActor();
+
 }

@@ -1,8 +1,5 @@
-import Classes.Market;
-import Classes.OrdinaryClient;
-import Classes.PromotionalClient;
-import Classes.SpecialClient;
-import Interfases.iActorBehaviour;
+import Classes.*;
+import Interfases.iActor;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -16,14 +13,17 @@ public class App {
         // market.update();
 
         Market market = new Market();
-        iActorBehaviour item1 = new OrdinaryClient("Boris");
-        iActorBehaviour item2 = new SpecialClient("Konstantin", 01);
-        iActorBehaviour item3 = new OrdinaryClient("Dasha");
-        iActorBehaviour item4 = new PromotionalClient("Julia", "Shoe Sale", 1);
-        market.acceptToMarket(item1);
-        market.acceptToMarket(item2);
-        market.acceptToMarket(item3);
-        market.acceptToMarket(item4);
+        market.setPromotionalLimit("Shoe Sale", 1);
+        iActor client1 = new OrdinaryClient("Boris");
+        iActor client2 = new SpecialClient("Konstantin", 1);
+        iActor client3 = new OrdinaryClient("Dasha");
+        iActor client4 = new PromotionalClient("Julia", "Shoe Sale");
+        iActor client5 = new PromotionalClient("Anna", "Shoe Sale");
+        market.acceptToMarket(client1);
+        market.acceptToMarket(client2);
+        market.acceptToMarket(client3);
+        market.acceptToMarket(client4);
+        market.acceptToMarket(client5);
         market.update();
 
     }

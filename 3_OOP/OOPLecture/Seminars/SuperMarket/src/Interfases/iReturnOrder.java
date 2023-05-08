@@ -10,4 +10,15 @@ public interface iReturnOrder {
      */
     void getMoney();
 
+    /**
+     * Статус клиента: вернул ли он заказ
+     * @return
+     */
+    boolean isReturnOrder();
+    /**
+     * Статус клиента: получил ли он деньги за возврат
+     * @return
+     */
+    boolean isGetMoney();
+
 }
