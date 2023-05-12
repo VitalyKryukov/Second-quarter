@@ -3,16 +3,22 @@ package StudentDomen;
 import java.util.Iterator;
 import java.util.List;
 
-public class StudentGroup implements Iterable<Student> {
+public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup> {
+    /**
+     * @param groupID - ID группы
+     */
+    public final int groupID;
     /**
      * Список студентов
      */
     private List<Student> students;
     /**
      * Конструктор
+     * @param id - ID группы
      * @param students - студенты
      */
-    public StudentGroup(List<Student> students) {
+    public StudentGroup(int id, List<Student> students) {
+        this.groupID = id;
         this.students = students;
     }
     /**
@@ -59,5 +65,25 @@ public class StudentGroup implements Iterable<Student> {
 
         };
     }
-    
+    /**
+     * Переопределенный метод
+     */
+    @Override
+    public String toString() {
+        String studentList = "\tStudent list: {\n";
+        for (Student student : students) {
+            studentList += "\t\t" + student + "\n";
+        }
+        studentList += "\t}";
+
+        return "\tGroup ("
+                + "ID = " + groupID
+                + ", Student count = " + students.size() + ")\n"
+                + studentList;
+    }
+
+    @Override
+    public int compareTo(StudentGroup o) {
+        return o.students.size() - students.size();
+    }
 }
