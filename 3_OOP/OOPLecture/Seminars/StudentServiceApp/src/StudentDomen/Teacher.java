@@ -2,9 +2,9 @@ package StudentDomen;
 
 public class Teacher extends User {
     /**
-     * @param teacerId - ID учителя
+     * @param tiacherID - ID учителя
      */
-    private int teacerId;
+    private int teacherId;
     /**
      * @param academicDegree - ученая степень
      */
@@ -14,27 +14,28 @@ public class Teacher extends User {
      * @param firstName - имя
      * @param secondName - фамилия
      * @param age - возраст
-     * @param teacerId - ID учителя
+     * @param tiacherID - ID учителя
      * @param academicDegree - ученая степень
      */
-    public Teacher(String firstName, String secondName, int age, int teacerId, String academicDegree ) {
+    public Teacher(String firstName, String secondName, int age, int tiacherID, String academicDegree ) {
         super(firstName, secondName, age);
-       this.teacerId = teacerId;
+       this.teacherId = tiacherID;
        this.academicDegree = academicDegree;
     }
+    
     /**
      * Получить ID учителя
      * @return ID учителя
      */
-    public int getTeacerId() {
-        return teacerId;
+    public int getTeacherId() {
+        return teacherId;
     }
     /**
      * Задать ID учителя
-     * @param teacerId - ID учителя
+     * @param tiacherID - ID учителя
      */
-    public void setTeacerId(int teacerId) {
-        this.teacerId = teacerId;
+    public void setTeacherId(int tiacherID) {
+        this.teacherId = tiacherID;
     }
     /**
      * Получить степень учителя
@@ -50,5 +51,16 @@ public class Teacher extends User {
     public void setLevel(String academicDegree) {
         this.academicDegree = academicDegree;
     }
-
+    /**
+     * Переопределенный метод toString
+     */
+    @Override
+    public String toString() {
+        return "Teacher{"+
+            "firstName=" +super.getFirstName()+", "+
+            "secondName="+super.getSecondName()+", "+
+            "age=" +super.getAge()+", "+
+            "teacherId="+teacherId+
+        "}";
+    }
 }
