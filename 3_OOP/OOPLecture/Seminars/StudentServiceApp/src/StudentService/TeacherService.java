@@ -34,9 +34,10 @@ public class TeacherService implements iUserService<Teacher>{
     */
     @Override
     public void create(String firstName, String secondName, int age) {
-        Teacher person = new Teacher(firstName, secondName, age, count, secondName);
+        Teacher person = new Teacher(firstName, secondName, age, count, "Не указано");
         count ++;
-        teachers.add(person);    
+        teachers.add(person);
+        
     }
 
     /**

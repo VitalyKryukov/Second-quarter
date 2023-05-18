@@ -60,7 +60,7 @@ public class Teacher extends User {
             "firstName=" +super.getFirstName()+", "+
             "secondName="+super.getSecondName()+", "+
             "age=" +super.getAge()+", "+
-            "teacherId="+teacherId+
+            "teacherId="+teacherId+ "academicDegree=" +academicDegree+
         "}";
     }
 }
