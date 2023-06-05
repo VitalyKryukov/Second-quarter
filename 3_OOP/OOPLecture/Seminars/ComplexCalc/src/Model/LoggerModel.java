@@ -9,7 +9,7 @@ public abstract class LoggerModel {
 	protected String loggerName;
 
 	/** Постфикс к имени файла логгера */
-	protected static String filePostfix = "_complexCalc";
+	protected static String filePostfix = "_logCalc";
 
 	/** Путь до файла логгера */
 	protected String filePath;

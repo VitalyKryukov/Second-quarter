@@ -24,15 +24,10 @@ public class DefaultCalculatorView implements iCalculatorView<ComplexNumber> {
 		System.out.println();
 		System.out.println("1. ВВЕДИТЕ ДЕЙСТВИТЕЛЬНУЮ ЧАСТЬ ПЕРВОГО ЧИСЛА");
 		System.out.println("2. ВВЕДИТЕ МНИМУЮ ЧАСТЬ ПЕРВОГО ЧИСЛА");
-		System.out.println();
 		System.out.println("3. ВВЕДИТЕ ДЕЙСТВИТЕЛЬНУЮ ЧАСТЬ ВТОРОГО ЧИСЛА");
 		System.out.println("4. ВВЕДИТЕ МНИМУЮ ЧАСТЬ ВТОРОГО ЧИСЛА");
-		System.out.println();
 		System.out.println("5. ВВЕДИТЕ АРИФМЕТИЧЕСКУЮ ОПЕРАЦИЮ: + - * /");
-		System.out.println();
-		System.out.println("6. РЕЗУЛЬТАТ БУДЕТ ВЫВЕДЕН В КОНСОЛЬ");
-		System.out.println("   и ЗАПИСАН В ЛОГФАЙЛ");
-		System.out.println("   (существующий или вновь созданный, при отсутствии файла)");
+		System.out.println("6. РЕЗУЛЬТАТ БУДЕТ ВЫВЕДЕН В КОНСОЛЬ и ЗАПИСАН В ЛОГФАЙЛ");
 		System.out.println();
 	}
 

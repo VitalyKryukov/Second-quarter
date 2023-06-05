@@ -32,7 +32,7 @@ public class CalculatorController<T> {
 		while (flag) {
 			view.showLabel();
 
-			String question = "Начинаем работу?";
+			String question = "Ввести данные?";
 			if (!view.getInputAnswerToAQuestion(question)) {
 				flag = false;
 				view.exitProgram();

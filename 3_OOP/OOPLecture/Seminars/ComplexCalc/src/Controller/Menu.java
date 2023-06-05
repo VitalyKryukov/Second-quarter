@@ -1,7 +1,7 @@
 package Controller;
 
 /**
- * Класс перечисления меню
+ * Класс меню
  */
 public enum Menu {
 	NONE(""),
@@ -15,7 +15,6 @@ public enum Menu {
 
 	/**
 	 * Констркутор
-	 * 
 	 * @param operator - символ оператора
 	 */
 	Menu(String operator) {
@@ -24,7 +23,6 @@ public enum Menu {
 
 	/**
 	 * Геттер символа оператора
-	 * 
 	 * @return - строковый тип (возвращает operator)
 	 */
 	public String getOperator() {

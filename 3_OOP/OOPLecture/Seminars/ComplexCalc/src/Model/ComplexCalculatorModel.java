@@ -42,7 +42,7 @@ public class ComplexCalculatorModel implements iCalculatorModel<ComplexNumber> {
 	 * Переопределение метода интерфейса iCalculatorModel
 	 * Деление
 	 * a + bi   (a + bi)(c - di)    ac + bd     bc - ad
-	 * ------ = ---------------- = --------- + --------- i
+	 * ...... = ................ =  .......  +  ....... - i
 	 * c + di   (c + di)(c - di)   c*c + d*d   c*c + d*d
 	 */
 	@Override

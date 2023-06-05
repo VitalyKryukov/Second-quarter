@@ -1,0 +1,8 @@
+июн. 05, 2023 10:45:49 PM Model.TextLogger writeLog
+INFO: (5 + 9i) / (5 + 6i) = (1.2950819672131149 + 0.2459016393442623i)
+июн. 05, 2023 10:46:13 PM Model.TextLogger writeLog
+INFO: (5 + 8i) + (3 + 7i) = (8 + 15i)
+июн. 05, 2023 10:47:02 PM Model.TextLogger writeLog
+INFO: (6 + 2i) * (7 + 5i) = (32 + 44i)
+июн. 05, 2023 10:47:18 PM Model.TextLogger writeLog
+INFO: (7 + 8i) - (2 + 4i) = (5 + 4i)

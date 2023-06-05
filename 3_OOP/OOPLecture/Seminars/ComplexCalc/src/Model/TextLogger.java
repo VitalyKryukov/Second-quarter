@@ -21,7 +21,7 @@ public class TextLogger extends LoggerModel implements iLogger<ComplexNumber> {
 	 */
 	public TextLogger(String loggerName) {
 		super.loggerName = loggerName;
-		String localPath = "G:/GeekBrains/1_Учебный процесс/2 четверть/Second quarter/3_OOP/OOPLecture/Seminars/ComplexCalc";
+		String localPath = "./";
 		super.filePath = localPath
 				.concat("loggers" + File.separator
 						+ super.getLoggerName() + super.getfilePostfix() + ".txt");
