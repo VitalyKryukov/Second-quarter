@@ -12,7 +12,7 @@ public class HashMap<K, V> implements Iterable<HashMap.Entity> {
     private Bucket[] buckets;
 
     @Override
-    public Iterator<HashMap.Entity> iterator() {
+    public HashMap<K, V>.HashMapIterator iterator() {
         return new HashMapIterator();
     }
 
