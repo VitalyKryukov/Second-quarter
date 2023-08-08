@@ -2,116 +2,130 @@ package hw4_v3;
 
 import java.util.Iterator;
 
-public class HashMap<K, V> implements Iterable<HashMap.Entity<K, V>> {
+import hw4_v3.HashMap.Bucket;
+
+public class HashMap<K, V> implements Iterable<HashMap.Entity> {
 
     private static final int INIT_BUCKET_COUNT = 16;
     private static final double LOAD_FACTOR = 0.5;
     private int size = 0;
-    private Bucket<K, V>[] buckets;
 
-    public HashMap() {
-        buckets = new Bucket[INIT_BUCKET_COUNT];
-    }
 
-    public HashMap(int initCount) {
-        buckets = new Bucket[initCount];
-    }
+    private Bucket[] buckets;
 
     @Override
-    public Iterator<Entity<K, V>> iterator() {
+    public HashMap<K, V>.HashMapIterator iterator() {
         return new HashMapIterator();
     }
 
-    class HashMapIterator implements Iterator<Entity<K, V>> {
-        private int bucketIndex = 0;
-        private Bucket<K, V>.Node currentNode = null;
+    // Итератор для перебора элементов хэш-карты
+    class HashMapIterator implements Iterator<HashMap.Entity> {
+
+        int bucketIndex = 0;
+        Bucket<K, V> currentBucket;
+        Bucket.Node currentNode;
 
         @Override
         public boolean hasNext() {
-            while (bucketIndex < buckets.length) {
-                if (currentNode == null) {
-                    Bucket<K, V> bucket = buckets[bucketIndex];
-                    if (bucket != null) {
-                        currentNode = bucket.head;
-                    }
-                } else {
-                    if (currentNode.next != null) {
-                        currentNode = currentNode.next;
-                    } else {
-                        currentNode = null;
-                        bucketIndex++;
-                    }
-                }
-                if (currentNode != null) {
-                    return true;
-                }
+            if (currentNode != null && currentNode.next != null) {
+                currentNode = currentNode.next;
+                return true;
             }
+
+            while (bucketIndex < buckets.length) {
+                currentBucket = buckets[bucketIndex];
+                if (currentBucket != null) {
+                    currentNode = currentBucket.head;
+                    if (currentNode != null) {
+                        bucketIndex++;
+                        return true;
+                    }
+                }
+                bucketIndex++;
+            }
+
             return false;
         }
 
         @Override
-        public Entity<K, V> next() {
-            if (currentNode == null) {
-                throw new IllegalStateException("No more elements.");
+        public Entity next() {
+            if (!hasNext()) {
+                return null;
             }
-            Entity<K, V> entity = new Entity<>();
-            entity.key = currentNode.value.key;
-            entity.value = currentNode.value.value;
+            Entity entity = new Entity(currentNode.value.key, currentNode.value.value);
             currentNode = currentNode.next;
             return entity;
         }
     }
-
-    class Entity<K, V> {
+    
+    
+    // Внутренний класс для представления элемента хэш-карты
+    class Entity {
         K key;
         V value;
-    }
-
-    class Bucket<K, V> {
-        private Node head;
-
-        class Node {
-            Node next;
-            Entity<K, V> value;
+    
+        public Entity(K key, V value) {
+            this.key = key;
+            this.value = value;
         }
+    
+        // Добавьте этот конструктор без параметров
+        public Entity() {
+            // Здесь можете оставить его пустым или добавить необходимую логику
+        }
+    }
+    
+    
+    
+    // Внутренний класс для представления бакета
+    class Bucket<K, V>{
 
-        public V add(Entity<K, V> entity) {
+        private Node head;
+        class Node{
+            Node next;
+            Entity value;
+        }
+        // Добавление элемента в бакет
+        public V add(Entity entity){
             Node node = new Node();
             node.value = entity;
 
-            if (head == null) {
+            if (head == null){
                 head = node;
                 return null;
             }
 
             Node currentNode = head;
-            while (true) {
-                if (currentNode.value.key.equals(entity.key)) {
-                    V buf = currentNode.value.value;
+            while (true){
+                if (currentNode.value.key.equals(entity.key)){
+                    V buf = (V)currentNode.value.value;
                     currentNode.value.value = entity.value;
                     return buf;
                 }
-                if (currentNode.next != null) {
+                if (currentNode.next != null){
                     currentNode = currentNode.next;
-                } else {
+                }
+                else {
                     currentNode.next = node;
                     return null;
                 }
             }
-        }
 
-        public V remove(K key) {
+        }
+        // Удаление элемента из бакета по ключу
+        public V remove(K key){
             if (head == null)
                 return null;
-            if (head.value.key.equals(key)) {
-                V buf = head.value.value;
+            if (head.value.key.equals(key)){
+                V buf = (V)head.value.value;
                 head = head.next;
                 return buf;
-            } else {
+            }
+            else {
                 Node node = head;
-                while (node.next != null) {
-                    if (node.next.value.key.equals(key)) {
-                        V buf = node.next.value.value;
+                while (node.next != null){
+                    if (node.next.value.key.equals(key)){
+                        V buf = (V)node.next.value.value;
                         node.next = node.next.next;
                         return buf;
                     }
@@ -120,104 +134,92 @@ public class HashMap<K, V> implements Iterable<HashMap.Entity<K, V>> {
                 return null;
             }
         }
-
-        public V get(K key) {
+        // Получение значения элемента из бакета по ключу
+        public V get(K key){
             Node node = head;
-            while (node != null) {
+            while (node != null){
                 if (node.value.key.equals(key))
-                    return node.value.value;
+                    return (V)node.value.value;
                 node = node.next;
             }
             return null;
         }
 
-        // ... остальной код методов Bucket ...
 
     }
-
-    private int calculateBucketIndex(K key) {
+    // Вычисление индекса бакета для заданного ключа
+    private int calculateBucketIndex(K key){
         return Math.abs(key.hashCode()) % buckets.length;
     }
-
-    private void recalculate() {
+    // Пересчет бакетов при необходимости
+    private void recalculate(){
         size = 0;
         Bucket<K, V>[] old = buckets;
         buckets = new Bucket[old.length * 2];
-        for (int i = 0; i < old.length; i++) {
+        for (int i = 0; i < old.length; i++){
             Bucket<K, V> bucket = old[i];
-            if (bucket != null) {
-                Bucket<K, V>.Node node = bucket.head;
-                while (node != null) {
-                    put(node.value.key, node.value.value);
+            if (bucket != null){
+                Bucket.Node node = bucket.head;
+                while (node != null){
+                    put((K)node.value.key, (V)node.value.value);
                     node = node.next;
                 }
             }
         }
     }
+    // Добавление элемента в хэш-карту
+    public V put(K key, V value){
 
-    public V put(K key, V value) {
-        if (buckets.length * LOAD_FACTOR <= size) {
+        if (buckets.length * LOAD_FACTOR <= size){
             recalculate();
         }
 
         int index = calculateBucketIndex(key);
-        Bucket<K, V> bucket = buckets[index];
-        if (bucket == null) {
-            bucket = new Bucket<>();
+        Bucket bucket = buckets[index];
+        if (bucket == null){
+            bucket = new Bucket();
             buckets[index] = bucket;
         }
 
-        Entity<K, V> entity = new Entity<>();
+        Entity entity = new Entity();
         entity.key = key;
         entity.value = value;
 
-        V res = bucket.add(entity);
-        if (res == null) {
+        V res = (V)bucket.add(entity);
+        if (res == null){
             size++;
         }
         return res;
     }
-
-    public V remove(K key) {
+    // Удаление элемента из хэш-карты по ключу
+    public V remove(K key){
         int index = calculateBucketIndex(key);
-        Bucket<K, V> bucket = buckets[index];
+        Bucket bucket = buckets[index];
         if (bucket == null)
             return null;
-        V res = bucket.remove(key);
-        if (res != null) {
+        V res = (V)bucket.remove(key);
+        if (res != null){
             size--;
         }
         return res;
     }
-
-    public V get(K key) {
+    // Получение значения элемента из хэш-карты по ключу
+    public V get(K key){
         int index = calculateBucketIndex(key);
-        Bucket<K, V> bucket = buckets[index];
+        Bucket bucket = buckets[index];
         if (bucket == null)
             return null;
-        return bucket.get(key);
+        return (V)bucket.get(key);
     }
-
-    // ... остальной код методов HashMap ...
-
-    public static void main(String[] args) {
-
-        HashMap<String, String> hashMap = new HashMap<>(4);
-
-        String res = hashMap.put("+79005554433", "Andrey");
-        res = hashMap.put("+79005554432", "Aleksey");
-        res = hashMap.put("+79005554432", "Daria");
-        res = hashMap.put("+79005554433", "Elena");
-        res = hashMap.put("+79005554434", "Kostya");
-        res = hashMap.put("+79005554435", "Ivan");
-        res = hashMap.put("+79005554436", "Olga");
-        res = hashMap.put("+79005554437", "Sonya");
-        res = hashMap.put("+79005554438", "Masha");
-        res = hashMap.put("+79005554439", "Oleg");
-
-        for (HashMap.Entity<String, String> element : hashMap) {
-            System.out.println(element.key + " - " + element.value);
-        }
+    // Конструктор без аргументов, создает хэш-карту с начальным размером бакетов
+    public HashMap(){
+        buckets = new Bucket[INIT_BUCKET_COUNT];
 
     }
+    // Конструктор с заданным начальным размером бакетов
+    public HashMap(int initCount){
+        buckets = new Bucket[initCount];
+    }
+
+
 }
