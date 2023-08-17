@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.io.FileWriter;
 
 public class DataSaver {
-    public static void saveHumanData(Human human) {
+    public static void saveHumanData(Person person) {
 
-        String fileName = human.getLastName();
-        String fileContents = human.toString();
+        String fileName = person.getLastName();
+        String fileContents = person.toString();
 
-        // Для проверки, существует ли файл с именем в виде данной фамилии
+        // Проверка, существует ли файл с именем в виде данной фамилии
         File file = new File(fileName+".txt");
 
         try (FileWriter fw = new FileWriter(fileName+".txt", file.exists())) { // Если файл существует, дозаписываем

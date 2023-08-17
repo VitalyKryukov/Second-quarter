@@ -3,20 +3,20 @@ package Seminar3;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Укажите следующие данные, разделённые пробелом:");
+        System.out.println("Введите данные, разделённые пробелом:");
         System.out.println("Фамилия Имя Отчество дата рождения номер телефона пол");
 
-        // Вводим бесконечный цикл, чтобы пользователь мог вводить свои данные вновь и вновь в случае неуспешной валидации введённых данных
+        // Бесконечный цикл, чтобы пользователь мог вводить свои данные вновь и вновь
         while (true) {
             try {
                 // Создаём экземпляр пользователя
-                Human human = new Human();
+                Person person = new Person();
                 // Через консоль принимаем данные, проверяем и наполняем ими нашего пользователя
-                DataReceptor.getHumanData(human);
+                DataReceptor.getHumanData(person);
                 // Сохраняем в файл
-                DataSaver.saveHumanData(human);
+                DataSaver.saveHumanData(person);
 
-                System.out.println("Данные успешно сохранены.");
+                System.out.println("Данные сохранены успешно.");
                 // Выходим из бесконечного цикла
                 break;
             } catch (RuntimeException e) {

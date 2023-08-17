@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class DataReceptor {
 
-    public static void getHumanData(Human human) throws RuntimeException {
+    public static void getHumanData(Person person) throws RuntimeException {
 
         Scanner scanner;
         scanner = new Scanner(System.in);
@@ -19,7 +19,7 @@ public class DataReceptor {
 
         // Проверка на число фраз в строке
         if (data.length != 6) {
-            throw new RuntimeException("Должно быть шесть данных, разделённых пробелом. Вы ввели " + (data.length < 6 ? "меньше" : "больше") + " данных.");
+            throw new RuntimeException("Должно быть 6 параметров, разделённых пробелом. Вы ввели " + (data.length < 6 ? "меньше" : "больше") + " данных.");
         }
 
         // Проверяем конкретные данные
@@ -51,8 +51,8 @@ public class DataReceptor {
             if (!phoneNumber.matches("\\d+")) {
                 throw new RuntimeException("В номере телефона должны быть только цифры.");
             }
-            if (phoneNumber.length() != 10) {
-                throw new RuntimeException("В номере телефона должно быть 10 цифр (вы указали "+phoneNumber.length()+").");
+            if (phoneNumber.length() != 11) {
+                throw new RuntimeException("В номере телефона должно быть 11 цифр (вы указали "+phoneNumber.length()+").");
             }
 
             // Проверяем пол
@@ -64,7 +64,7 @@ public class DataReceptor {
             sex = s.charAt(0);
 
             // Записываем данные в пустой экземпляр класса пользователя
-            human.setData(lastName, firstName, middleName, dateOfBirth, phoneNumber, sex);
+            person.setData(lastName, firstName, middleName, dateOfBirth, phoneNumber, sex);
         }
     }
 }

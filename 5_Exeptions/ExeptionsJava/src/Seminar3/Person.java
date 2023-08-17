@@ -3,7 +3,7 @@ package Seminar3;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Human {
+public class Person {
 
     private String lastName;
     private String firstName;
