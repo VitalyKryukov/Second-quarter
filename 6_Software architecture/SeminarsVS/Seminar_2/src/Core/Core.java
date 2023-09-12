@@ -41,10 +41,10 @@ public class Core {
 
             myGenerator = generatorList.get(i);
 
-            System.out.println((i + 1) + ". Ваша награда: " + myGenerator.openReward());
+            System.out.println((i + 1) + ". Твоя награда: " + myGenerator.openReward());
             System.out.println();
 
-            System.out.printf("Продолжить (Y/N)? ");
+            System.out.printf("Продолжить (y/n)? ");
 
             if (sc.nextLine().toLowerCase().equals("n")) {
                 break;
