@@ -6,8 +6,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 import org.junit.jupiter.api.*;
 
 class CalculatorTest {
-    Calculator calculator;
-
+    //Определяем ссылку на класс Calculator
+     Calculator calculator;
+     // Создаем объект Calculator
     @BeforeEach
     void setUp() {
         calculator = new Calculator();
