@@ -5,33 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d496a9f-b722-4c80-8e9e-03ccded6fbf0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar2_task1/MVSCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar2_task1/MathUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar2_task1/StringConcatenation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar2_task2/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar2_task2/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar2_task2/Shop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar2_task3/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar2_task3/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar2_task3/Motorcycle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar2_task3/Vehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar3_task1/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar3_task2/EvenOddNumber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar3_task3/NumberInInterval.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar3_task4/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar3_task4/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar2_task1/MVSCalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar2_task1/MathUtilsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar2_task1/StringConcatenationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar2_task2/CartTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar2_task3/VehicleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar3_task1/CalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar3_task2/EvenOddNumberTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar3_task3/NumberInIntervalTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar3_task4/UserAuthTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/seminar1_task1/task1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/seminar1_task1/task1Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/seminar1_task4/CalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/seminar1_task4/CalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/seminar3_task4/UserAuthTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/seminar3_task4/UserAuthTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +51,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.CalculatorTest">
+  <component name="RunManager" selected="JUnit.UserAuthTest">
     <configuration name="task3Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="seminar1_task3.task3Test" />
       <module name="unitTests" />
@@ -106,18 +81,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="task1Test.testSum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="NumberInIntervalTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="unitTests" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="seminar1_task1.*" />
+          <option name="PATTERN" value="seminar3_task3.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="seminar1_task1" />
-      <option name="MAIN_CLASS_NAME" value="seminar1_task1.task1Test" />
-      <option name="METHOD_NAME" value="testSum" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="seminar3_task3" />
+      <option name="MAIN_CLASS_NAME" value="seminar3_task3.NumberInIntervalTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserAuthTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="unitTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="seminar3_task4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="seminar3_task4" />
+      <option name="MAIN_CLASS_NAME" value="seminar3_task4.UserAuthTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -137,36 +126,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="task3Test.testAssertions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="unitTests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="seminar1_task3.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="seminar1_task3" />
-      <option name="MAIN_CLASS_NAME" value="seminar1_task3.task3Test" />
-      <option name="METHOD_NAME" value="testAssertions" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.task3Test" />
+      <item itemvalue="JUnit.NumberInIntervalTest" />
+      <item itemvalue="JUnit.UserAuthTest" />
       <item itemvalue="JUnit.CalculatorTest" />
-      <item itemvalue="JUnit.task3Test.testAssertions" />
-      <item itemvalue="JUnit.task1Test.testSum" />
       <item itemvalue="JUnit.task2Test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserAuthTest" />
+        <item itemvalue="JUnit.NumberInIntervalTest" />
         <item itemvalue="JUnit.CalculatorTest" />
         <item itemvalue="JUnit.task2Test" />
         <item itemvalue="Application.task3Test" />
-        <item itemvalue="JUnit.task3Test.testAssertions" />
-        <item itemvalue="JUnit.task1Test.testSum" />
       </list>
     </recent_temporary>
   </component>

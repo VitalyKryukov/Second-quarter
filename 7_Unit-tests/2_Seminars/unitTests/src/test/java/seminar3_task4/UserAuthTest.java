@@ -19,9 +19,9 @@ public class UserAuthTest {
     void init() {
 
         // Создаём юзеров
-        user1 = new User("Maxim", "qwerty", true);
-        user2 = new User("Boris", "12345", false);
-        user3 = new User("Svetlana", "asdfg", false);
+        user1 = new User("Vitaly", "qwerty", true);
+        user2 = new User("Dima", "1234567", false);
+        user3 = new User("Boris", "dfgas", false);
 
         // Добавляем юзеров в репозиторий (UserRepository.data)
         userRepository = new UserRepository();
@@ -30,9 +30,9 @@ public class UserAuthTest {
         userRepository.addUser(user3);
 
         // Все юзеры проходят аутентификацию
-        user1.authenticate("Maxim", "qwerty");
-        user2.authenticate("Boris", "12345");
-        user3.authenticate("Svetlana", "asdfg");
+        user1.authenticate("Vitaly", "qwerty");
+        user2.authenticate("Dima", "1234567");
+        user3.authenticate("Boris", "dfgas");
     }
 
     @Test
