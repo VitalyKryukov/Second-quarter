@@ -4,16 +4,24 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/**
+ * Юнит тесты в парадигме ООП
+ */
 public class MVSCalculatorTest {
-
+    /*
+     * Создаем экземпляр MVSCalculator
+     */
     private MVSCalculator calculator;
-
+    /*
+     * Создаем экземпляр Calculator
+     */
     @BeforeEach
     public void setUp() {
         calculator = new MVSCalculator();
     }
-
+    /*
+     * Запускаем тесты
+     */
     @Test
     public void testAddition() {
         assertEquals(5, calculator.add(2, 3));
@@ -36,7 +44,7 @@ public class MVSCalculatorTest {
 
     @Test
     public void testDivisionByZero() {
-        assertThrows(IllegalArgumentException.class, () -> calculator.divide(1, 0));
+        assertThrows(IllegalArgumentException.class, () -> calculator.divide(5, 0));
         //assertThrows(ArithmeticException.class, () -> calculator.divide(5, 0));
     }
 }
