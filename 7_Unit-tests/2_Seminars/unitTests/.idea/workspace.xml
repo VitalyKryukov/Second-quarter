@@ -5,37 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d496a9f-b722-4c80-8e9e-03ccded6fbf0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar4_task1/PaymentGateway.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar4_task1/PaymentProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar4_task2/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar4_task2/BookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar4_task2/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar4_task2/InMemoryBookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar5_task1/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar5_task1/Logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar5_task2/Kitchen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar5_task2/MenuItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar5_task2/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar5_task3/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar5_task3/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar5_task4/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/seminar5_task4/School.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar4_task1/DummyPaymentGateway.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar4_task1/FakePaymentGateway.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar4_task1/PaymentProcessorMockTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar4_task1/PaymentProcessorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar4_task1/SpyPaymentGateway.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar4_task1/StubPaymentGateway.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar4_task2/BookServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar4_task2/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar5_task1/CalculatorIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar5_task2/RestaurantIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar5_task3/BookServiceIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar5_task4/SchoolIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar5_task5/LoginEndToEndTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/seminar5_task6/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/seminar2_task1/MVSCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/seminar2_task1/MVSCalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/seminar5_task6/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/seminar5_task6/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,12 +46,22 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.BookServiceTest">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="seminar3_task1" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.CalculatorTest">
     <configuration name="BookServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="unitTests" />
       <extension name="coverage">
@@ -112,6 +93,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="unitTests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="seminar3_task1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="seminar3_task1" />
+      <option name="MAIN_CLASS_NAME" value="seminar3_task1.CalculatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CartTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="unitTests" />
       <extension name="coverage">
@@ -122,21 +118,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="seminar2_task2" />
       <option name="MAIN_CLASS_NAME" value="seminar2_task2.CartTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MVSCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="unitTests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="seminar2_task1.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="seminar2_task1" />
-      <option name="MAIN_CLASS_NAME" value="seminar2_task1.MVSCalculatorTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -159,19 +140,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.CalculatorTest" />
       <item itemvalue="JUnit.BookServiceTest" />
       <item itemvalue="JUnit.BookServiceTest.testFindAllBooks" />
       <item itemvalue="JUnit.CartTest" />
-      <item itemvalue="JUnit.MVSCalculatorTest" />
       <item itemvalue="JUnit.MVSCalculatorTest.testDivisionByZero" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CalculatorTest" />
         <item itemvalue="JUnit.BookServiceTest" />
         <item itemvalue="JUnit.BookServiceTest.testFindAllBooks" />
         <item itemvalue="JUnit.CartTest" />
         <item itemvalue="JUnit.MVSCalculatorTest.testDivisionByZero" />
-        <item itemvalue="JUnit.MVSCalculatorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -189,6 +170,9 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/unitTests$CartTest.ic" NAME="CartTest Coverage Results" MODIFIED="1698655508502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>seminar2_task2.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/unitTests$CalculatorTest.ic" NAME="CalculatorTest Coverage Results" MODIFIED="1698952280384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>seminar3_task1.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/unitTests$BookServiceTest.ic" NAME="BookServiceTest Coverage Results" MODIFIED="1698770303250" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>seminar4_task2.*</FILTER>
