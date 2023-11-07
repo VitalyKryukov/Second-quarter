@@ -3,8 +3,8 @@
 сравнивает эти средние значения и выводит соответствующее сообщение.
 """
 
-class TwoListsAverageSumCalculator:
 
+class TwoListsAverageSumCalculator:
     """
     Конструктор класса  принимает два списка чисел:
     :param lst1: Первый список
@@ -67,13 +67,13 @@ class TwoListsAverageSumCalculator:
         val1 = str(self.lst1_average_sum)
         val2 = str(self.lst2_average_sum)
         if self.lst1_average_sum > self.lst2_average_sum:
-            print("Первый список имеет большее среднее значение ("+val1+" > "+val2+")")
+            print("Первый список имеет большее среднее значение (" + val1 + " > " + val2 + ")")
         elif self.lst2_average_sum > self.lst1_average_sum:
-            print("Второй список имеет большее среднее значение ("+val1+" < "+val2+")")
+            print("Второй список имеет большее среднее значение (" + val1 + " < " + val2 + ")")
         else:
-            print("Средние значения списков равны ("+val1+" = "+val2+")")
+            print("Средние значения списков равны (" + val1 + " = " + val2 + ")")
 
 
-# if __name__ == "__main__":
-#     calculator = TwoListsAverageSumCalculator([2, 5, 9], [3, 4, 12])
-#     calculator.print_comparison_result()
+if __name__ == "__main__":
+    calculator = TwoListsAverageSumCalculator([2, 5, 9], [3, 4, 12])
+    calculator.print_comparison_result()
