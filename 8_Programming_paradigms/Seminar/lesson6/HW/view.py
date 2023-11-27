@@ -10,10 +10,11 @@ class View(ViewInterface):
         """
         Показываем меню программы
         """
+
         print("---------------")
-        print("1 - Старт/пауза")
-        print("2 - Стоп")
-        print("3 - Выход")
+        print(" 1 Старт/пауза ")
+        print(" 2 Стоп        ")
+        print(" 3 Выход       ")
         print("---------------")
 
     def show_and_get_input(self) -> str:
@@ -21,7 +22,7 @@ class View(ViewInterface):
         Показываем строку для ввода команды
         :return: введённая команда
         """
-        return input("Введите команду из перечисленных выше: ")
+        return input("Введите номер команды: ")
 
     def show_time(self, time: str) -> None:
         """
